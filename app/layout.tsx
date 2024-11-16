@@ -11,7 +11,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <title>Miami Book Fair 2024</title>
+        <title>MBF Chat</title>
         <link rel="shortcut icon" href="/images/favicon.ico" />
         <meta
           name="description"
