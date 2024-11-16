@@ -1,0 +1,188 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-gradient-to-br from-purple-400 via-blue-400 to-blue-300 min-h-screen;
+}
+
+body input,
+body textarea {
+  color: black; /* Keep input fields with black text */
+
+}
+
+a {
+  color: #02468d; /* Links in yellow */
+  
+}
+
+a:hover {
+  border-bottom: 1px solid;
+  color: #02468d; /* Slightly lighter yellow on hover */
+}
+
+p {
+  margin: 8px 0;
+}
+
+code {
+  color: #ffa500; /* Keep orange for code elements */
+}
+
+li {
+  padding: 4px;
+}
+
+/* Global colors for the theme */
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 207 100% 33.5%; /* Bright yellow for primary elements */
+    --primary-foreground: 210 40% 4%; /* Black foreground */
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 53 100% 50%; /* Yellow accent */
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 210 39% 23%; /* Yellow border */
+    --input: 214.3 31.8% 91.4%;
+    --ring: 53 100% 50%; /* Yellow focus ring */
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --radius: 0.5rem;
+  }
+
+  /* Dark mode settings */
+  .dark {
+    --background:white;
+    --foreground: red; /* Yellow text */
+    --card: #005dab;
+    --card-foreground: #02468d; /* Card foreground in yellow */
+    --popover: #222222;
+    --popover-foreground: #02468d;
+    --primary: #02468d; /* Bright yellow primary */
+    --primary-foreground: #131318; /* Black foreground */
+    --secondary: #02468d; /* Secondary yellow */
+    --secondary-foreground: #131318; /* Black text */
+    --muted: #222222;
+    --muted-foreground: #02468d;
+    --accent: #02468d; /* Accent yellow */
+    --accent-foreground: #131318;
+    --destructive: #FF6347; /* Tomato color */
+    --destructive-foreground: #02468d;
+    --border: #02468d; /* Yellow borders */
+    --input: #222222;
+    --ring: #02468d; /* Yellow focus ring */
+    --chart-1: 53 100% 50%; /* Yellow for chart */
+    --chart-2: 43 100% 40%;
+    --chart-3: 20 80% 45%;
+    --chart-4: 220 70% 50%;
+    --chart-5: 340 75% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border; /* Ensure yellow border */
+  }
+  body {
+    @apply bg-background text-foreground; /* Yellow text, black background */
+  }
+  
+  button {
+    @apply border border-border;
+  }
+  
+
+}
+
+.markdown h1 {
+  font-size: 2em;
+  margin-bottom: 0.5em;
+}
+
+.markdown h2 {
+  font-size: 1.5em;
+  margin-bottom: 0.5em;
+}
+
+.markdown p {
+  margin-bottom: 1em;
+}
+
+.markdown ul {
+  list-style-type: disc;
+  margin-left: 1.5em;
+}
+
+.markdown li {
+  margin-bottom: 0.5em;
+}
+
+.markdown strong {
+  font-weight: bold;
+}
+
+.markdown em {
+  font-style: italic;
+}
+
+.markdown a {
+  color: #1e90ff;
+  text-decoration: underline;
+}
+
+.markdown pre {
+  background: #f4f4f4;
+  padding: 1em;
+  border-radius: 5px;
+  overflow-x: auto;
+}
+
+.markdown code {
+  background: #f4f4f4;
+  padding: 0.2em 0.4em;
+  border-radius: 3px;
+}
+
+.markdown-content {
+  @apply text-gray-700;
+  
+  p {
+    @apply my-1;
+  }
+  
+  h1, h2, h3 {
+    @apply text-gray-800 font-semibold;
+  }
+}
+
+/* Add smooth transitions */
+* {
+  @apply transition-colors duration-200;
+}
+
+/* Card hover effects */
+.hover-card {
+  @apply transform transition-all duration-200 hover:-translate-y-1 hover:shadow-lg;
+}
+
+.chat-suggestion {
+  @apply p-4 bg-white rounded-lg shadow border hover:shadow-md transition-shadow cursor-pointer text-gray-700;
+}
+
+.chat-input {
+  @apply w-full p-4 pr-12 rounded-lg border border-gray-300 shadow-sm focus:ring-2 focus:ring-blue-400 focus:border-transparent;
+}

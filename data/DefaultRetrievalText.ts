@@ -1,0 +1,1 @@
+export default `paste your text here`;
