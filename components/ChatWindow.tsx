@@ -5,7 +5,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 import { Message } from 'ai';
 import { useChat } from "ai/react";
-import { useRef, useState, ReactElement } from "react";
+import { useRef, useState, ReactElement, useEffect } from "react";
 import type { FormEvent } from "react";
 
 import { UploadDocumentsForm } from "@/components/UploadDocumentsForm";
@@ -58,9 +58,16 @@ export function ChatWindow(props: {
 
   const scrollToBottom = () => {
     if (messageContainerRef.current) {
-      messageContainerRef.current.scrollTop = messageContainerRef.current.scrollHeight;
+      messageContainerRef.current.scrollTo({
+        top: messageContainerRef.current.scrollHeight,
+        behavior: 'smooth'
+      });
     }
   };
+
+  useEffect(() => {
+    scrollToBottom();
+  }, [messages]);
 
   async function sendMessage(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -135,8 +142,12 @@ export function ChatWindow(props: {
 
   return (
     <div className="flex flex-col h-screen">
-      <div className="flex-1 mx-auto w-full max-w-[800px] bg-white rounded-lg shadow-lg my-4 overflow-hidden" ref={messageContainerRef}>
-        <div className="h-full p-8">
+      <div 
+        className="flex-1 mx-auto w-full max-w-[800px] bg-white rounded-lg shadow-lg my-4 overflow-y-auto" 
+        ref={messageContainerRef}
+        style={{ maxHeight: 'calc(100vh - 180px)' }}
+      >
+        <div className="p-8">
           {messages.length > 0 ? (
             [...messages].map((m, i) => (
               <ChatMessage 
