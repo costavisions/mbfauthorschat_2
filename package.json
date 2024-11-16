@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "format": "prettier --write \"app\"",
-    "postinstall": "if [ $(uname -s) = 'Linux' ]; then npx @next/swc-linux-x64-gnu install; fi"
+    "postinstall": "if [ $(uname -s) = 'Linux' ]; then (npx @next/swc-linux-x64-gnu install || echo 'SWC installation skipped'); fi"
   },
   "engines": {
     "node": "18.x"
