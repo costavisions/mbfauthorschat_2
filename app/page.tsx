@@ -6,7 +6,7 @@ export default function AgentsPage() {
     <div className="w-full bg-white">
       <div className="flex flex-col items-center mb-6">
         <Image
-          src="/Asset 1.png"
+          src="/authors-chatbot/Asset 1.png"
           alt="Miami Book Fair Logo"
           width={200}
           height={100}
