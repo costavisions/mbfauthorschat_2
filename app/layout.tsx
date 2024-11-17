@@ -12,7 +12,7 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <title>MBF Chat</title>
-        <link rel="shortcut icon" href="/images/favicon.ico" />
+        <link rel="shortcut icon" href="/authors-chatbot/images/favicon.ico" />
         <meta
           name="description"
           content="Miami Book Fair Authors AI Assistant"
