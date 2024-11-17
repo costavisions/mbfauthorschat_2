@@ -9,4 +9,5 @@ module.exports = withBundleAnalyzer({
     ignoreDuringBuilds: true,
   },
   basePath: '/authors-chatbot', // Add the basePath configuration here
+  assetPrefix: '/authors-chatbot/', // Set the assetPrefix
 });
