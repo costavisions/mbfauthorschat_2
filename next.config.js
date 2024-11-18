@@ -4,10 +4,9 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 
 module.exports = withBundleAnalyzer({
   eslint: {
-    // Warning: This allows production builds to successfully complete even if
-    // your project has ESLint errors.
-    ignoreDuringBuilds: true,
+    ignoreDuringBuilds: true, // Ignore ESLint errors during production builds
   },
-  basePath: '/authors-chatbot', // Add the basePath configuration here
-  assetPrefix: 'https://stingray-app-kuz8f.ondigitalocean.app/',
+  basePath: '/authors-chatbot', // Ensure routes are prefixed with /authors-chatbot
+  assetPrefix: 'https://stingray-app-kuz8f.ondigitalocean.app/authors-chatbot/', // Corrected to include the basePath
+  crossOrigin: 'anonymous', // Add this for handling CORS issues
 });
