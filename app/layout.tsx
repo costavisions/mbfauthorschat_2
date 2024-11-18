@@ -1,6 +1,5 @@
 import "./globals.css";
 import { Public_Sans } from "next/font/google";
-import { useRouter } from "next/router";
 
 const publicSans = Public_Sans({ subsets: ["latin"] });
 
@@ -9,13 +8,13 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const { basePath } = useRouter(); // Use basePath dynamically
+  const basePath = "/authors-chatbot"; // Use the base path directly
 
   return (
     <html lang="en">
       <head>
         <title>MBF Chat</title>
-        {/* Dynamically include basePath for the favicon */}
+        {/* Use the static basePath */}
         <link
           rel="shortcut icon"
           href={`${basePath}/images/favicon.ico`}
