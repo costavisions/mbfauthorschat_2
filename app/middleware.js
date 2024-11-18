@@ -15,7 +15,7 @@ export function middleware(req) {
   return res;
 }
 
-// Apply the middleware only to API routes
+// Apply the middleware globally to all routes
 export const config = {
-  matcher: "/api/:path*", // Middleware applies to all /api routes
+  matcher: "/:path*", // Matches all routes
 };
