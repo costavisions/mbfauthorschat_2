@@ -39,7 +39,7 @@ export default function AgentsPage() {
 
   return (
     <ChatWindow
-      endpoint="api/chat/retrieval"
+      endpoint={`${basePath}/api/chat/retrieval`} // Include the basePath in the API endpoint
       emptyStateComponent={InfoCard}
       showIngestForm={true}
       placeholder="Ask me about Miami Book Fair authors and events..."
