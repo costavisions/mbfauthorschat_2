@@ -1,14 +1,13 @@
 import { ChatWindow } from "@/components/ChatWindow";
 import Image from "next/image";
-import { useRouter } from "next/router";
 
 export default function AgentsPage() {
-  const { basePath } = useRouter(); // Dynamically get the basePath
+  const basePath = "/authors-chatbot"; // Use the base path directly
 
   const InfoCard = (
     <div className="w-full bg-white">
       <div className="flex flex-col items-center mb-6">
-        {/* Dynamically include basePath for the image */}
+        {/* Use the static basePath */}
         <Image
           src={`${basePath}/Asset 1.png`}
           alt="Miami Book Fair Logo"
