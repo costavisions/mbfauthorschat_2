@@ -7,6 +7,6 @@ module.exports = withBundleAnalyzer({
     ignoreDuringBuilds: true, // Ignore ESLint errors during production builds
   },
   basePath: '/authors-chatbot', // Ensure routes are prefixed with /authors-chatbot
-  assetPrefix: 'https://stingray-app-kuz8f.ondigitalocean.app/authors-chatbot/', // Serve static assets from this URL
+  assetPrefix: 'https://chatbot.miamibookfair2024.com/authors-chatbot', // Serve static assets from this URL
   crossOrigin: 'anonymous', // Add cross-origin for static files
 });
