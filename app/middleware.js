@@ -19,7 +19,7 @@ export function middleware(request) {
 
   if (isPreflight) {
     const preflightHeaders = {
-      ...(isAllowedOrigin && { 'Access-Control-Allow-Origin': origin }),
+      'Access-Control-Allow-Origin': origin,
       ...corsOptions,
     }
     return NextResponse.json({}, { headers: preflightHeaders })
